@@ -12,7 +12,12 @@
     <div id="produto"></div>
     <div id="soma"></div>
     <script>
-    
+    var x = parseInt(document.getElementById("x").textContent);
+    var y = parseInt(document.getElementById("y").textContent);
+    var produto = document.getElementById("produto");
+    var soma = document.getElementById("soma");
+    produto.textContent = "O produto de " + x + " e " + y + " é " + (x*y) + "!";
+    soma.textContent = "A soma de " + x + " e " + y + " é " + (x+y) + "!";
     </script>
 </body>
 
