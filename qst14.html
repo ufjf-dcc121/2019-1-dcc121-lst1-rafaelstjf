@@ -16,6 +16,12 @@
         var produto = document.getElementById("produto");
         var soma = document.getElementById("soma");
         var botao = document.getElementById("calcular");
+        botao.addEventListener("click", function realizarCalculo() {
+            var valX = parseInt(x.textContent);
+            var valY = parseInt(y.textContent);
+           produto.textContent =  "O produto de " + valX + " e " + valY + " é " + (valX * valY) + "!";
+           soma.textContent =  "A soma de " + valX + " e " + valY + " é " + (valX + valY) + "!";
+        });
     </script>
 </body>
 </html>
