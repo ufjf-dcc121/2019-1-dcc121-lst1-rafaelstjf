@@ -31,6 +31,7 @@
             nome.contentEditable = "true";
             anos.contentEditable = "true";
             confeitaria.contentEditable = "true";
+            coberturas.contentEditable = "true";
             bolos.contentEditable = "true";
             var media;
             botaoLimpar.addEventListener("click", function limparClick() {
@@ -45,6 +46,12 @@
                 }
                 else
                     resultado.textContent = "Você está reprovado com média " + media + "!";
+                if(parseInt(confeitaria.textContent) < 60)
+                    alert(nome.textContent + ", considere estudar mais confeitaria!");
+                if(parseInt(coberturas.textContent) < 60)
+                    alert(nome.textContent + ", considere estudar mais coberturas!");
+                if(parseInt(bolos.textContent) < 60)
+                    alert(nome.textContent + ", considere estudar mais bolos e broas!");
 
             });
 
