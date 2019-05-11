@@ -1,17 +1,55 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset='utf-8'>
     <title>Questão 15</title>
 </head>
+
 <body>
     <main>
         <h1>Resultado da avaliação</h1>
-        <p>Olá <span id="nome">Fulano</span>, você está matriculado há <span id="anos">2</span> anos no curso de Confeitaria e as notas das suas disciplinas são:             <span id="confeitaria">70</span> em Confeitaria Básica; <span id="coberturas">80</span> em Coberturas e <span id="bolos">60</span> em Broas e Bolos.</p>
+        <p>Olá <span id="nome">Fulano</span>, você está matriculado há <span id="anos">2</span>
+            anos no curso de Confeitaria e as notas das suas disciplinas são:
+            <span id="confeitaria">70</span> em Confeitaria Básica;
+            <span id="coberturas">80</span> em Coberturas e <span id="bolos">60</span>
+            em Broas e Bolos.</p>
         <p id="resultado"></p>
         <button id="avaliar">Avaliar</button>
         <button id="limpar">Limpar</button>
         <p id="melhorias"></p>
+        <script>
+            var nome = document.getElementById("nome");
+            var anos = document.getElementById("anos");
+            var confeitaria = document.getElementById("confeitaria");
+            var coberturas = document.getElementById("coberturas");
+            var bolos = document.getElementById("bolos");
+            var botaoAvaliar = document.getElementById("avaliar");
+            var botaoLimpar = document.getElementById("limpar");
+            var resultado = document.getElementById("resultado");
+            var melhorias = document.getElementById("melhorias");
+            nome.contentEditable = "true";
+            anos.contentEditable = "true";
+            confeitaria.contentEditable = "true";
+            bolos.contentEditable = "true";
+            var media;
+            botaoLimpar.addEventListener("click", function limparClick() {
+                resultado.textContent = "";
+                melhorias.textContent = "";
+
+            });
+            botaoAvaliar.addEventListener("click", function avaliarClick() {
+                media = (parseInt(confeitaria.textContent) + parseInt(coberturas.textContent) + parseInt(bolos.textContent)) / 3;
+                if (media >= 70) {
+                    resultado.textContent = "Parabéns " + nome.textContent + "! Você está aprovado com média " + media + "!";
+                }
+                else
+                    resultado.textContent = "Você está reprovado com média " + media + "!";
+
+            });
+
+        </script>
     </main>
 </body>
+
 </html>
