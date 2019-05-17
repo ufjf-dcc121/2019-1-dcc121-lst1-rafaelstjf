@@ -15,9 +15,9 @@
             <span id="coberturas">80</span> em Coberturas e <span id="bolos">60</span>
             em Broas e Bolos.</p>
         <p id="resultado"></p>
+        <p id="melhorias"></p>
         <button id="avaliar">Avaliar</button>
         <button id="limpar">Limpar</button>
-        <p id="melhorias"></p>
         <script>
             var nome = document.getElementById("nome");
             var anos = document.getElementById("anos");
@@ -46,13 +46,13 @@
                 }
                 else
                     resultado.textContent = "Você está reprovado com média " + media + "!";
-                if(parseInt(confeitaria.textContent) < 60)
-                    alert(nome.textContent + ", considere estudar mais confeitaria!");
-                if(parseInt(coberturas.textContent) < 60)
-                    alert(nome.textContent + ", considere estudar mais coberturas!");
-                if(parseInt(bolos.textContent) < 60)
-                    alert(nome.textContent + ", considere estudar mais bolos e broas!");
-
+                melhorias.innerHTML = "";
+                if (parseInt(confeitaria.textContent) < 60)
+                    melhorias.innerHTML += "<p> " + nome.textContent + ", considere estudar mais confeitaria básica!</p>";
+                if (parseInt(coberturas.textContent) < 60)
+                    melhorias.innerHTML += "<p> " + nome.textContent + ", considere estudar mais coberturas!</p>";
+                if (parseInt(bolos.textContent) < 60)
+                    melhorias.innerHTML += "<p> " + nome.textContent + ", considere estudar mais bolos e broas!</p>";
             });
 
         </script>
